@@ -1,0 +1,7 @@
+<h1>User all</h1>
+<%= link_to "create", users_new_path %>
+<ul>
+  <% @users.each do |u| %>
+  <li><%= u.name %>, <%= u.email %></li>
+  <% end %>
+</ul>
