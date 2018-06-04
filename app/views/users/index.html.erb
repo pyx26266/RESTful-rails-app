@@ -1,7 +1,9 @@
 <h1>User all</h1>
-<%= link_to "create", users_new_path %>
+<%= link_to "create", new_user_path %>
 <ul>
   <% @users.each do |u| %>
-  <li><%= u.name %>, <%= u.email %></li>
+  <li><%= u.name %>, <%= u.email %> &nbsp; 
+    <%= link_to "delete", user_path(u), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "destroy_user"%>
+  </li>
   <% end %>
 </ul>

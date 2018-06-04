@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'users', to: "users#index"
-  get 'users/new', to: 'users#new'
-  post 'users', to: "users#create"
+ 
+  root to: 'users#index'
   
-  get '/', to: 'users#index'
-  
+  resources :users, only: [:destroy, :new, :index, :create]
 end
