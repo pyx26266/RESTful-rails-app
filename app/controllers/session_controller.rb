@@ -11,7 +11,7 @@ class SessionController < ApplicationController
       redirect_to @user
     else
       flash[:danger] = "invalid email/password"
-      redirect_to root_path
+      render 'new'
     end
   end
   

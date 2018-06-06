@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create]
-  
+  before_action :user_active, only: [:new, :create]
+  before_action :logged_in_user, only: [ :destroy]
   def new
     @user = User.new
   end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
   
-  def logged_in_user
+  def user_active
     redirect_to(current_user) if logged_in?
   end
 end
