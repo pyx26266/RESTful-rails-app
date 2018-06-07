@@ -10,4 +10,13 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+  
+  def admin_user
+    flash[:warning] = "Only admin can do that."
+    if logged_in?
+      redirect_to current_user
+    else
+      redirect_to login_path
+    end
+  end
 end
