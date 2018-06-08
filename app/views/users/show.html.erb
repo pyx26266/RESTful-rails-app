@@ -1,4 +1,8 @@
 <h1>Welcome <%= @user.name.capitalize %></h1>
-<%= link_to "LogOut", logout_path, method: :delete %><br>
-<span><%= @user.rest_key.key %> </span><br>
-<%= link_to "generate", rest_keys_path, method: :post %>
+<% if @user.rest_key.nil? %>
+  <span>No key found<br>
+<%= link_to "generate one", rest_keys_path, method: :post %>
+<% else %>
+  <span><%= @user.rest_key.key %> </span><br>
+  <%= link_to "re-generate", rest_keys_path, method: :post %>
+<% end %>

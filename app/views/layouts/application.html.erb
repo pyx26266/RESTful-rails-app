@@ -8,11 +8,28 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="display:table">
     <% flash.each do |msg_type, msg| %>
     <%= msg_type %>: <%= msg %>
     <% end %>
-
-    <%= yield %>
+    
+    <strong>RESTApp</strong>
+    
+    <div style="float:right">
+      <%= link_to "Home", root_path %>&emsp;
+      <% if not logged_in? %>
+        <%= link_to "Log In", login_path %>
+      <% else %>
+         <%= link_to "Log Out", logout_path, method: :delete %>
+      <% end %>
+    
+      
+    </div>
+    <div>
+      <%= yield %>
+    </div>
+    <div>
+      
+    </div>
   </body>
 </html>
