@@ -1,11 +1,12 @@
 <h1>Log In</h1>
 
 <%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  
-  <%= f.submit "sign in" %>
+  <%= f.text_field :email, placeholder: :email %>
+  </br>
+  </br>
+  <%= f.password_field :password, placeholder: :password %>
+  </br>
+  </br>
+  <%= f.submit "Sign In" %>
 <% end %>
+<%= link_to "New User?", new_user_path %>

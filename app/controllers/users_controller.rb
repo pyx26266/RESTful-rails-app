@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       flash[:success] = "successful sign-up"
       redirect_to users_url
     else
-      flash[:failure] = "Something wrong!"
+      flash[:warning] = "Something wrong!"
       render 'new'
     end
   end
