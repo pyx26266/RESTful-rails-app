@@ -6,7 +6,7 @@
   <span><%= @user.rest_key.key %> </span><br>
   <%= link_to "re-generate", rest_keys_path, method: :post %>
   <h3>Try Our REST calls!</h3>
-  <%= link_to "get your secret details", api_v1_requests_url(hash:  @user.rest_key.key), method: :post %>
+  <%= link_to "get your secret details", api_v1_requests_url(hash:  @user.rest_key.key), method: :post, target: :_blank %>
   </br>
-  <%= link_to "get public details", api_v1_requests_url %>
+  <%= link_to "get public details", api_v1_requests_url, target: :_blank %>
 <% end %>
