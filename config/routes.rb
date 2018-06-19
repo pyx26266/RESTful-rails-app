@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:new, :index, :create, :show, :destroy]
   resources :rest_keys, only: [:create]
+  resources :photos, only: [:create]
   
   namespace 'api', defaults: {format: 'json'} do
     namespace 'v1' do

@@ -1,4 +1,17 @@
-<h1>Welcome <%= @user.name.capitalize %></h1>
+<h1>
+  <% if not @user.photo.nil?%>
+    <%= image_tag @user.photo.image.url(:thumb), style: "border-radius:50%;" %>
+  <% end %>
+  H! <%= @user.name.capitalize %>
+</h1>
+
+<%= form_for @photo, html: { multipart: true } do |f| %>
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+<br/>
 <% if @user.rest_key.nil? %>
   <span>No key found<br>
 <%= link_to "generate one", rest_keys_path, method: :post %>

@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
     if logged_in?
       @user = current_user
+      @photo = Photo.new
     else
       redirect_to root_path
     end
