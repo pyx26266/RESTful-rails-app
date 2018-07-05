@@ -14,6 +14,8 @@ cd RESTful-rails-app
 ## Running the app
 ```ruby
 bundle install --without production test
+rails db:migrate
+rails db:seed
 rails server
 ```
 now visit http://localhost:3000
