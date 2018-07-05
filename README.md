@@ -1,17 +1,19 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
+# Rails RESTful App
+[Try here!](https://restapi-app.herokuapp.com/)
 
+### Discription
+> A simle example app to demonstrate REST API and MVC in the same app.
+For MVC it lets you create your account and manages logins through session.
+It also shows how to use token authentication in API calls.
 
-Hi there! Welcome to AWS Cloud9!
-
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
-
-Happy coding!
-
-## Rails RESTful sample app
-
+## Getting started
+```bash
+git clone https://github.com/pyx26266/RESTful-rails-app.git
+cd RESTful-rails-app
+```
+## Running the app
+```ruby
+bundle install --without production test
+rails server
+```
+now visit http://localhost:3000
